@@ -10,20 +10,20 @@ services:
       POSTGRES_PASSWORD: postgres
 
   vote:
-    image: voting-app
+    image: sangledeveloper/voting-app
     ports:
       - 5000:80
     links:
       - redis
 
   worker:
-    image: worker-app
+    image: sangledeveloper/worker-app
     links:
       - redis
       - db
 
   result:
-    image: result-app
+    image: sangledeveloper/result-app
     ports:
       - 5001:80
     links:
